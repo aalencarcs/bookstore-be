@@ -33,6 +33,6 @@ public class Book {
     private Difficulty difficulty;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "story_id")
+    @JoinColumn(name = "book_id")
     private List<Section> sections = new ArrayList<>();
 }

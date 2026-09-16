@@ -1,15 +1,17 @@
 package com.example.test.service;
 
 import com.example.test.model.Book;
+import com.example.test.model.PossibleValues;
 import com.example.test.repository.BookRepository;
+import com.example.test.repository.BookSpecification;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.Root;
 import jakarta.persistence.criteria.Selection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service

@@ -1,6 +1,9 @@
 package com.example.test.controller;
 
+import com.example.test.controller.dto.PossibleValuesResponse;
+import com.example.test.mapper.PossibleValuesMapper;
 import com.example.test.model.Book;
+import com.example.test.model.PossibleValues;
 import com.example.test.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +19,8 @@ public class BookController {
 
     private final BookService bookService;
 
-    @GetMapping("/{title}")
-    public List<Book> findByTitle(@PathVariable String title) {
-
+    @GetMapping("/byTitle")
+    public List<Book> findByTitle(@RequestParam String title) {
         return bookService.findByTitle(title);
     }
 
