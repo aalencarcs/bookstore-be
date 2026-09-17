@@ -37,12 +37,8 @@ public class BookDao {
 
         query.select(selection).distinct(true);
 
-        List<String> values = entityManager.createQuery(query)
-                .getResultList()
-                .stream()
-                .filter(Objects::nonNull)
-                .map(Object::toString)
-                .toList();
+        List<Object> values = entityManager.createQuery(query)
+                .getResultList();
 
         return new PossibleValues(
                 filed,
