@@ -15,7 +15,7 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final BookDao bookDao;
-    
+
     public List<Book> findByTitle(String title){
         return bookRepository.findAll(BookSpecification.byTitle(title));
     }
