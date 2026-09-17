@@ -1,6 +1,7 @@
 package com.example.test.service;
 
 import com.example.test.model.Book;
+import com.example.test.model.PossibleValues;
 import com.example.test.repository.BookRepository;
 import com.example.test.repository.dao.BookDao;
 import com.example.test.repository.dao.BookSpecification;
@@ -28,7 +29,11 @@ public class BookService {
         return bookRepository.findAll(BookSpecification.byListOfGenres(genre));
     }
 
-    public List<Object> getPossibleValues(String field){
-        return bookDao.findPossibleValues(field);
+    public List<PossibleValues> getPossibleValues(){
+        return bookDao.getAllPossibleValues();
+    }
+
+    public List<Book> findByFilter(List<PossibleValues> possibleValues){
+        return bookRepository.findAll(BookSpecification.byListOfFilter(possibleValues));
     }
 }

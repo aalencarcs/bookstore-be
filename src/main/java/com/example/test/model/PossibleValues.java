@@ -4,6 +4,6 @@ import java.util.List;
 
 public record PossibleValues(
         String field,
-        List<Object> value
+        List<String> value
 ) {
 }
