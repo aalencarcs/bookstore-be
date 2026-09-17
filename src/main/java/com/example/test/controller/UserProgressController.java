@@ -29,7 +29,9 @@ public class UserProgressController {
     }
 
     @PostMapping("/save")
-    public UserProgress saveProgress(@RequestBody UserProgressRequest request){
-        return userService.saveProgress(request.toEntity());
+    public UserProgressResponse saveProgress(@RequestBody UserProgressRequest request){
+        UserProgress userProgress =  userService.saveProgress(request.toEntity());
+        return new UserProgressResponse(userProgress.getId(),
+                userProgress.getBookId(), userProgress.getSectionId(), userProgress.getHealth());
     }
 }
