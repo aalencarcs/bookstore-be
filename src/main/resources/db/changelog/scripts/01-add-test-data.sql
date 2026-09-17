@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset Arthur:01
+
 CREATE TABLE IF NOT EXISTS book (
                                     id BIGSERIAL PRIMARY KEY,
                                     title VARCHAR(255) NOT NULL,

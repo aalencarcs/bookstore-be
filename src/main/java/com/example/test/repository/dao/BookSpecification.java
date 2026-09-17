@@ -1,4 +1,4 @@
-package com.example.test.repository;
+package com.example.test.repository.dao;
 
 import com.example.test.model.Book;
 import org.springframework.data.jpa.domain.Specification;

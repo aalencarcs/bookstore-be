@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset R43:1
+
 create table user_progress
 (
     id      bigserial primary key,
@@ -5,3 +8,5 @@ create table user_progress
     health  int,
     section_id int
 );
+
+--rollback drop table user_progress;

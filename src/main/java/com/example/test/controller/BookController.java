@@ -35,6 +35,6 @@ public class BookController {
 
     @GetMapping("/possibleValues/{field}")
     public List<Object> getPossibleValues(@PathVariable String field){
-        return bookService.findPossibleValues(field);
+        return bookService.getPossibleValues(field);
     }
 }
