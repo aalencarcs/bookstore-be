@@ -6,6 +6,7 @@ import com.example.test.repository.BookRepository;
 import com.example.test.repository.dao.BookDao;
 import com.example.test.repository.dao.BookSpecification;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class BookService {
     public List<Book> findByTitle(String title){
         return bookRepository.findAll(BookSpecification.byTitle(title));
     }
+
 
     public List<Book> findAllBooks(){
         return bookRepository.findAll();

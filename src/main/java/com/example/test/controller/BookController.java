@@ -6,6 +6,7 @@ import com.example.test.model.Book;
 import com.example.test.model.PossibleValues;
 import com.example.test.service.BookService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +27,7 @@ public class BookController {
     }
 
     @GetMapping("/findAll")
+    @Cacheable(cacheNames = "books")
     public List<BookResponse> findAll() {
         return BookMapper.toBookResponseList(bookService.findAllBooks());
     }
